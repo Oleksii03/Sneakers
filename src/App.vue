@@ -1,13 +1,9 @@
 <script setup></script>
 
 <template>
-  <div>
-    <h2>Гадаєш це все</h2>
+  <div class="container">
+    <h2>вю вюв вю</h2>
   </div>
 </template>
 
-<style scoped>
-h2 {
-  color: red;
-}
-</style>
+<style lang="scss" scoped></style>

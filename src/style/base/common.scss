@@ -1,0 +1,59 @@
+@use "./modern-normalize.scss";
+@use "../utils/variables.scss" as *;
+// -------------------------
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-base-color);
+}
+
+ul,
+ol,
+li,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.to-freeze {
+  overflow: hidden;
+}
+
+body {
+  // font-family: $font-primary;
+  // color: $light-text;
+  // background-color: $dark-bg;
+  // background-color: $dark-bg;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: $maxWidth;
+}

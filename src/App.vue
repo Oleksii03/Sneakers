@@ -2,8 +2,12 @@
 
 <template>
   <div>
-    <p>давай перевіримо ще раз</p>
+    <h2>Гадаєш це все</h2>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  color: red;
+}
+</style>

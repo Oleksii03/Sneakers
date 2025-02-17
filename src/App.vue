@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h1>як воно</h1>
+    <h1>гадаєш вишлдо</h1>
   </div>
 </template>
 

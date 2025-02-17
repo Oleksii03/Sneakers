@@ -6,4 +6,11 @@
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+  background-color: #c11f1f;
+  h2 {
+    color: blueviolet;
+  }
+}
+</style>

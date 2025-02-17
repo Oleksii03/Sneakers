@@ -29,8 +29,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "./src/index.html"),
-        about: path.resolve(__dirname, "./src/about.html"),
-        contact: path.resolve(__dirname, "./src/contact.html"),
+        // about: path.resolve(__dirname, "./src/about.html"),
+        // contact: path.resolve(__dirname, "./src/contact.html"),
         // Додайте більше сторінок, як потрібно
       },
       output: {

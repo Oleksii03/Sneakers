@@ -1,0 +1,34 @@
+// Максимальна ширина екрана
+$maxWidth: 1348px;
+
+// Брекпоінти:
+$xxs: 375px;
+$xs: 576px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1440px;
+$xl: 1920px;
+
+// Шрифти:
+$font-primary: "Raleway-SemiBold";
+$font-secondary: "Roboto-Regular";
+$font-tertiary: "Raleway-Bold";
+$font-quaternary: "Raleway-Medium";
+
+// Кольри==============
+// background:
+$dark-bg: rgb(29, 34, 40);
+$dark-gray-bg: rgb(48, 54, 61);
+$purple-bg-gradient: linear-gradient(
+  270deg,
+  rgb(135, 67, 255),
+  rgb(65, 54, 241) 100%
+);
+
+// text:
+$light-text: rgb(255, 255, 255);
+$dark-text: rgb(29, 34, 40);
+$purple-text-gradient: linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%);
+
+// universal:
+$basic-gray: rgba(255, 255, 255, 0.5);

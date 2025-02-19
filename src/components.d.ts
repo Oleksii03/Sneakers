@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BaseSvg: typeof import('./components/base/BaseSvg.vue')['default']
     Header: typeof import('./components/reusable/Header.vue')['default']
+    SvgManager: typeof import('./components/base/SvgManager.vue')['default']
   }
 }

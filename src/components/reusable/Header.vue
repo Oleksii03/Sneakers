@@ -55,7 +55,7 @@ onMounted(() => {
         <BaseSvg
           v-else
           class="header__button-icon"
-          :id="'icon-search'"
+          :id="'icon-wallet1'"
         ></BaseSvg>
       </button>
     </div>
@@ -75,7 +75,11 @@ onMounted(() => {
 
   &__container {
     @include flex-align-row;
-    column-gap: 16px;
+    column-gap: 10px;
+
+    @include media-min-width(xs) {
+      column-gap: 16px;
+    }
   }
 
   &__logo-box {
@@ -137,7 +141,7 @@ onMounted(() => {
     @include flex-align-row;
     margin-left: auto;
     background: $purple-bg-gradient;
-    padding: 8px;
+    padding: 7px;
     border-radius: 50%;
     box-shadow: 0px 15px 30px 0px rgba(20, 102, 204, 0.16);
     white-space: nowrap;

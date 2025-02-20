@@ -155,7 +155,38 @@ onMounted(() => {
       border-radius: 12px;
     }
 
+    @include media-min-width(md) {
+      &:hover {
+        animation-name: shake;
+        animation-duration: 1s;
+        @keyframes shake {
+          0%,
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+          10%,
+          30%,
+          50%,
+          70%,
+          90% {
+            transform: translate3d(-2px, 0, 0);
+          }
+          20%,
+          40%,
+          60%,
+          80% {
+            transform: translate3d(2px, 0, 0);
+          }
+        }
+      }
+    }
+
+    & > span {
+      pointer-events: none;
+    }
+
     &-icon {
+      pointer-events: none;
       fill: $light-text;
       width: 20px;
       height: 20px;

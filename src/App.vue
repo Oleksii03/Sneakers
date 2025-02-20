@@ -1,11 +1,14 @@
-<script setup>
-import SvgManager from "./components/base/SvgManager.vue";
-</script>
+<script setup></script>
 
 <template>
-  <Header />
+  <Header class="header" />
+  <main-slider />
 
-  <SvgManager />
+  <svg-manager />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header {
+  margin-bottom: 40px;
+}
+</style>

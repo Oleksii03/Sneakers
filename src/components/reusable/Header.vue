@@ -38,7 +38,7 @@ onMounted(() => {
         <BaseSvg
           v-show="screenWidth >= 576"
           class="header__search-box-icon"
-          :id="'icon-search'"
+          id="icon-search"
         ></BaseSvg>
 
         <input
@@ -52,11 +52,7 @@ onMounted(() => {
       <!-- button -->
       <button class="header__button">
         <span v-if="screenWidth >= 576">Connect wallet</span>
-        <BaseSvg
-          v-else
-          class="header__button-icon"
-          :id="'icon-wallet1'"
-        ></BaseSvg>
+        <BaseSvg v-else class="header__button-icon" id="icon-wallet1"></BaseSvg>
       </button>
     </div>
   </header>

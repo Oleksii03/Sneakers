@@ -1,5 +1,8 @@
 <script setup>
-defineProps(["id"]);
+defineProps({
+  id: String,
+  require: true,
+});
 </script>
 
 <template>

@@ -2,7 +2,7 @@
 
 <template>
   <Header class="header" />
-  <main-slider />
+  <main-page />
 
   <svg-manager />
 </template>

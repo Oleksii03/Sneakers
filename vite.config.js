@@ -17,8 +17,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@assets": path.resolve(__dirname, "src/assets"),
-      "@js": path.resolve(__dirname, "src/js"),
+      "@assets": "${folder}/src/assets",
+      "@mixins": "${folder}/src/mixins",
+      "@components": "${folder}/src/components",
+      "@pages": "${folder}/src/pages",
     },
   },
   build: {

@@ -26,36 +26,28 @@ export default {
   <swiper
     :effect="'cards'"
     :grabCursor="true"
-    :centeredSlides="true"
-    :slidesPerView="1.5"
-    :spaceBetween="-100"
     :pagination="pagination"
     :modules="modules"
     class="mySwiper"
+    :coverflowEffect="{
+      rotate: 0, // Прибирає нахил
+      stretch: 0, // Відстань між слайдами
+      depth: 200, // Глибина ефекту
+      modifier: 1, // Сила ефекту
+      slideShadows: false, // Без тіней
+    }"
   >
     <swiper-slide>
-      <img
-        src="../../../../assets/images/pages/main/slider/slide-1.png"
-        alt=""
-      />
+      <img src="@assets/images/pages/main/slider/slide-1.png" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img
-        src="../../../../assets/images/pages/main/slider/slide-2.png"
-        alt=""
-      />
+      <img src="@assets/images/pages/main/slider/slide-2.png" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img
-        src="../../../../assets/images/pages/main/slider/slide-3.png"
-        alt=""
-      />
+      <img src="@assets/images/pages/main/slider/slide-3.png" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img
-        src="../../../../assets/images/pages/main/slider/slide-4.png"
-        alt=""
-      />
+      <img src="@assets/images/pages/main/slider/slide-4.png" alt="" />
     </swiper-slide>
   </swiper>
 </template>

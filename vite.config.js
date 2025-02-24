@@ -17,10 +17,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@assets": "${folder}/src/assets",
-      "@mixins": "${folder}/src/mixins",
-      "@components": "${folder}/src/components",
-      "@pages": "${folder}/src/pages",
+      "@assets": path.resolve(__dirname, "src/assets"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@mixins": path.resolve(__dirname, "src/mixins"),
+      "@pages": path.resolve(__dirname, "src/pages"),
     },
   },
   build: {

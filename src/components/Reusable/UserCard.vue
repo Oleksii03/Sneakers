@@ -54,9 +54,6 @@ const props = defineProps({
     text-align: center;
     margin-bottom: 8px;
   }
-  &__user-name {
-    font-family: $font-quaternary;
-  }
 
   &__name {
     font-weight: 700;
@@ -65,8 +62,7 @@ const props = defineProps({
   }
 
   &__user-name {
-    font-weight: 500;
-    font-size: 16px;
+    font-family: $font-quaternary;
     background: $purple-text-gradient;
     background-clip: text;
     color: transparent;

@@ -1,8 +1,8 @@
 export const users = [
   {
     id: 0,
-    user: "User Name1",
-    userName: "username1",
+    user: "David Brown",
+    userName: "daviBran",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user1.png", import.meta.url),
@@ -11,8 +11,8 @@ export const users = [
   },
   {
     id: 1,
-    user: "User Name2",
-    userName: "username2",
+    user: "Alexander Lee",
+    userName: "alexlee87",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user2.png", import.meta.url),
@@ -21,8 +21,8 @@ export const users = [
   },
   {
     id: 2,
-    user: "User Name3",
-    userName: "username3",
+    user: "Natalia Kovalenko",
+    userName: "natalie_kov",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user3.png", import.meta.url),
@@ -31,8 +31,8 @@ export const users = [
   },
   {
     id: 3,
-    user: "User Name4",
-    userName: "username4",
+    user: "Ekaterina Ivanova",
+    userName: "kate_ivan",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user4.png", import.meta.url),
@@ -41,8 +41,8 @@ export const users = [
   },
   {
     id: 4,
-    user: "User Name5",
-    userName: "username5",
+    user: "Artem Morozov",
+    userName: "frosty_art",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user5.png", import.meta.url),
@@ -51,8 +51,8 @@ export const users = [
   },
   {
     id: 5,
-    user: "User Name6",
-    userName: "username6",
+    user: "Conor McGregor",
+    userName: "conor_mcgregor",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user6.png", import.meta.url),
@@ -61,8 +61,8 @@ export const users = [
   },
   {
     id: 6,
-    user: "User Name7",
-    userName: "username7",
+    user: "Uncle Pug",
+    userName: "mops",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user7.png", import.meta.url),
@@ -71,8 +71,8 @@ export const users = [
   },
   {
     id: 7,
-    user: "User Name8",
-    userName: "username8",
+    user: "Gollum",
+    userName: "golum_ukr",
     sales: "24 sales on 32ETH",
     img: {
       default: new URL("@assets/image/users/user8.png", import.meta.url),
@@ -90,7 +90,7 @@ export const cards = [
       default: new URL("@assets/image/card/nft.png", import.meta.url),
       webp: new URL("@assets/image/card/nft.webp", import.meta.url),
     },
-    name: "Digital Ascension Peak",
+    name: "WFH - art name",
     sold: "1.5M",
     ending: "05h 02m 41s",
     description:

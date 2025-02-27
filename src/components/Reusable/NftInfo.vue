@@ -2,10 +2,9 @@
   <slot></slot>
 </template>
 
-<script setup></script>
-
 <style lang="scss">
 @use "@assets/style/utils/variables.scss" as *;
+
 .nft-info {
   &__name {
     font-family: $font-tertiary;

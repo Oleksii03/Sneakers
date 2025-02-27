@@ -87,11 +87,7 @@ function infoActiveCard(value) {
 
   <section class="nft-cards">
     <div class="nft-cards__container container">
-      <TheCard
-        v-for="(card, index) in cards.slice(0, 8)"
-        :key="index"
-        :card="card"
-      >
+      <TheCard v-for="(card, index) in cards" :key="index" :userId="card.id">
       </TheCard>
     </div>
   </section>

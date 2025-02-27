@@ -2,18 +2,23 @@
 import PictureComponent from "@components/Base/PictureComponent.vue";
 import UserInfo from "@components/Reusable/UserInfo.vue";
 import { users } from "@mixins/data/dataBase.js";
+import { computed } from "vue";
 
 const logoCardSrc = new URL("@assets/image/logo-card.png", import.meta.url);
 const logoCardSrcset = new URL("@assets/image/logo-card.webp", import.meta.url);
 
 const props = defineProps({
-  card: Object,
+  userId: Number,
   search: Object,
 });
 
-const getId = (id) => () => users.find((item) => item.id === id);
+// const getId = (id) => () => users.find((item) => item.id === id);
 
-const getUserById = getId(props.card.userId);
+// const getUserById = getId(props.card.userId);
+
+const getUserById = computed(() =>
+  users.find((item) => item.id === props.userId)
+);
 </script>
 
 <template>
@@ -22,7 +27,7 @@ const getUserById = getId(props.card.userId);
       <PictureComponent
         :srcset="props.card.img.webp"
         :src="props.card.img.default"
-        :alt="'nft'"
+        alt="nft"
       />
       <div class="card__img-info-card">
         <UserInfo class="card__wrapper-user-info">
@@ -30,17 +35,17 @@ const getUserById = getId(props.card.userId);
             <div class="card__wrapper-image">
               <PictureComponent
                 class="card__img-image"
-                :srcset="getUserById().img.webp"
-                :src="getUserById().img.default"
-                :alt="'user'"
+                :srcset="getUserById.img.webp"
+                :src="getUserById.img.default"
+                alt="user"
               />
             </div>
           </template>
           <template v-slot:info-name>
-            <p class="card__info-name-black">{{ getUserById().user }}</p>
+            <p class="card__info-name-black">{{ getUserById.user }}</p>
           </template>
           <template v-slot:info-user-name>
-            <p class="card__info-user-name">@{{ getUserById().userName }}</p>
+            <p class="card__info-user-name">@{{ getUserById.userName }}</p>
           </template>
         </UserInfo>
       </div>
@@ -55,7 +60,7 @@ const getUserById = getId(props.card.userId);
           <PictureComponent
             :srcset="logoCardSrcset"
             :src="logoCardSrc"
-            :alt="'logo'"
+            alt="logo"
           />
           {{ props.card.sold }}
         </p>

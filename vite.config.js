@@ -4,7 +4,7 @@ import path from "path";
 import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
-  base: "/Taste",
+  base: "/Sneakers",
   plugins: [
     vue(),
     Components({

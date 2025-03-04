@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from "vue";
-
-const navLinks = ref(["WOMAN", "MEN", "ALL"]);
+const navLinks = ["WOMAN", "MEN", "ALL"];
 </script>
 
 <template>

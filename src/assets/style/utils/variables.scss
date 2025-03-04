@@ -1,5 +1,5 @@
 // Максимальна ширина екрана
-$maxWidth: 1348px;
+$maxWidth: 1340px;
 
 // Брекпоінти:
 $xxs: 375px;
@@ -10,25 +10,23 @@ $lg: 1440px;
 $xl: 1920px;
 
 // Шрифти:
-$font-primary: "Raleway-SemiBold";
-$font-secondary: "Roboto-Regular";
-$font-tertiary: "Raleway-Bold";
-$font-quaternary: "Raleway-Medium";
+$font-primary: "Montserrat-Regular";
+$font-secondary: "Montserrat-Bold";
+$font-tertiary: "Montserrat-BlackItalic";
+$font-quaternary: "Montserrat-BoldItalic";
 
 // Кольри==============
+// box-shadow
+$shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.25);
 // background:
-$dark-bg: rgb(29, 34, 40);
-$dark-gray-bg: rgb(48, 54, 61);
-$purple-bg-gradient: linear-gradient(
-  270deg,
-  rgb(135, 67, 255),
-  rgb(65, 54, 241) 100%
-);
+$bg-dark: rgb(0, 0, 0);
+$bg-light: rgb(229, 229, 229);
+$bg-gray: rgb(239, 239, 239);
 
 // text:
-$light-text: rgb(255, 255, 255);
-$dark-text: rgb(29, 34, 40);
-$purple-text-gradient: linear-gradient(270deg, #8743ff 0%, #d8c2ff 100%);
+$text-danger: rgb(255, 57, 57);
+$text-dark: rgb(0, 0, 0);
+$text-light: rgb(255, 255, 255);
 
 // universal:
-$basic-gray: rgba(255, 255, 255, 0.5);
+$basic-white: rgb(255, 255, 255);

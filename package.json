@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "rollup-plugin-visualizer": "^5.14.0",
-    "swiper": "^11.1.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2",
     "vue": "^3.5.13"

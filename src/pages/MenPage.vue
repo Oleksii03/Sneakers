@@ -7,7 +7,12 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+div {
+  background-color: #099b3fd7;
+  height: calc(100vh - 79px);
+}
 h1 {
-  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
 }
 </style>

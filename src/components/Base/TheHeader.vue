@@ -1,15 +1,20 @@
 <script setup>
+import BaseSvg from "./BaseSvg.vue";
+
 const navLinks = [
   { name: "WOMAN", path: "/woman" },
   { name: "MEN", path: "/men" },
-  { name: "ALL", path: "/" }, // Головна сторінка
+  { name: "ALL", path: "/" },
 ];
+
+const headerIcons = ["icon-user", "icon-search", "icon-basket"];
 </script>
 
 <template>
   <section class="header">
     <div class="header__container container">
       <div class="header__content">
+        <!-- NAV -->
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li
@@ -17,18 +22,119 @@ const navLinks = [
               :key="idx"
               class="header__nav-item"
             >
-              <router-link :to="link.path">{{ link.name }}</router-link>
+              <router-link class="header__nav-link" :to="link.path">
+                {{ link.name }}
+              </router-link>
             </li>
           </ul>
         </nav>
+        <!-- LOGO -->
+        <div class="header__logo-box">
+          <p class="header__logo"><span>your</span>SNEAKER</p>
+        </div>
+        <!-- ICON-BOX -->
+        <div class="header__icon-box">
+          <BaseSvg
+            class="header__icon"
+            v-for="(icon, idx) of headerIcons"
+            :key="idx"
+            :id="icon"
+          />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
+@use "@assets/style/utils/variables.scss" as *;
+@use "@assets/style/utils/mixins.scss" as *;
+// ----------imports----------------------
+
 .header {
-  background-color: #1466b8;
   padding: 20px;
+
+  &__content {
+    @include flex-align-row;
+  }
+  // ---NAV-BOX-----------------
+  &__nav {
+    &-list {
+      @include flex-align-row;
+      column-gap: clamp(1.25rem, -1.028rem + 4.75vw, 3.125rem);
+
+      // @include media-min-width(ms) {
+      //   line-height: 1.5rem;
+      // }
+    }
+
+    &-item {
+      font-size: clamp(0.938rem, 0.558rem + 0.79vw, 1.25rem);
+      line-height: calc(22px / 20px);
+      position: relative;
+    }
+
+    &-link {
+      padding-bottom: 9px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 7px);
+        height: 2px;
+        background-color: $bg-dark;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 200ms linear;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+  // ---LOGO-BOX-----------------
+  &__logo {
+    font-family: $font-secondary;
+    font-size: clamp(1.25rem, 0.976rem + 1.17vw, 2rem);
+    line-height: clamp(1.5rem, 1.157rem + 1.46vw, 2.438rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    & > span {
+      font-family: $font-primary;
+      color: rgb(160, 160, 160);
+    }
+
+    &-box {
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 250ms linear;
+
+      @include media-min-width(sm) {
+        transform: translateX(-35px);
+      }
+
+      @include media-min-width(lg) {
+        transform: translateX(-52px);
+      }
+    }
+  }
+  // ---ICON-BOX-----------------
+  &__icon {
+    width: clamp(1.25rem, 0.718rem + 1.11vw, 1.688rem);
+    height: 30px;
+    fill: transparent;
+    cursor: pointer;
+    stroke: $text-dark;
+
+    &-box {
+      @include flex-align-row;
+      column-gap: clamp(1.25rem, -0.801rem + 4.27vw, 2.938rem);
+    }
+  }
 }
 </style>

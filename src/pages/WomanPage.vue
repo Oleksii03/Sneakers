@@ -6,4 +6,13 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+  background-color: #b63a7cb1;
+  height: calc(100vh - 79px);
+}
+h1 {
+  text-align: center;
+  padding: 100px 0;
+}
+</style>

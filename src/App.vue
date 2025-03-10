@@ -8,6 +8,8 @@ import TheHeader from "@components/Base/TheHeader.vue";
   <TheHeader />
   <MainPage />
   <SvgManager />
+
+  <router-view />
 </template>
 
 <style lang="scss" scoped>

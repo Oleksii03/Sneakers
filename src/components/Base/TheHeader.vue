@@ -1,5 +1,9 @@
 <script setup>
-const navLinks = ["WOMAN", "MEN", "ALL"];
+const navLinks = [
+  { name: "WOMAN", path: "/woman" },
+  { name: "MEN", path: "/men" },
+  { name: "ALL", path: "/" }, // Головна сторінка
+];
 </script>
 
 <template>
@@ -13,7 +17,7 @@ const navLinks = ["WOMAN", "MEN", "ALL"];
               :key="idx"
               class="header__nav-item"
             >
-              <a href="#">{{ link }}</a>
+              <router-link :to="link.path">{{ link.name }}</router-link>
             </li>
           </ul>
         </nav>

@@ -14,6 +14,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SvgManager: typeof import('./components/Base/SvgManager.vue')['default']
     TheHeader: typeof import('./components/Base/TheHeader.vue')['default']
+    UIBurgerMenuBtn: typeof import('./components/UI/UIBurgerMenuBtn.vue')['default']
     UIButton: typeof import('./components/UI/UIButton.vue')['default']
     UISmallButton: typeof import('./components/UI/UISmallButton.vue')['default']
     WomanPage: typeof import('./pages/WomanPage.vue')['default']

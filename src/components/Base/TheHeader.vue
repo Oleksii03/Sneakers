@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import BaseSvg from "./BaseSvg.vue";
 
 const navLinks = [
@@ -8,6 +9,14 @@ const navLinks = [
 ];
 
 const headerIcons = ["icon-user", "icon-search", "icon-basket"];
+
+const windowWidth = ref(innerWidth);
+
+const updateWidth = () => (windowWidth.value = innerWidth);
+
+onMounted(() => addEventListener("resize", updateWidth));
+
+onBeforeUnmount(() => removeEventListener("resize", updateWidth));
 </script>
 
 <template>
@@ -16,17 +25,27 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
       <div class="header__content">
         <!-- NAV -->
         <nav class="header__nav">
-          <ul class="header__nav-list">
+          <ul v-if="windowWidth >= 768" class="header__nav-list">
             <li
               v-for="(link, idx) of navLinks"
               :key="idx"
               class="header__nav-item"
             >
-              <router-link class="header__nav-link" :to="link.path">
+              <router-link
+                class="header__nav-link"
+                :to="link.path"
+                :active-class="'active'"
+              >
                 {{ link.name }}
               </router-link>
             </li>
           </ul>
+
+          <button v-else class="burger-menu-btn" aria-label="кнопка меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
         <!-- LOGO -->
         <div class="header__logo-box">
@@ -52,32 +71,41 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
 // ----------imports----------------------
 
 .header {
-  padding: 20px;
+  padding: 17px 0px;
+  // outline: 1px solid black;
+
+  @include media-min-width(lg) {
+    padding: 20px 20px;
+  }
 
   &__content {
     @include flex-align-row;
   }
   // ---NAV-BOX-----------------
   &__nav {
+    display: flex;
+    align-items: center;
+
     &-list {
       @include flex-align-row;
       column-gap: clamp(1.25rem, -1.028rem + 4.75vw, 3.125rem);
+      transition: opacity 200ms linear;
 
-      // @include media-min-width(ms) {
-      //   line-height: 1.5rem;
-      // }
+      &:hover .header__nav-link.active::before {
+        opacity: 0;
+      }
     }
 
     &-item {
       font-size: clamp(0.938rem, 0.558rem + 0.79vw, 1.25rem);
       line-height: calc(22px / 20px);
-      position: relative;
     }
 
     &-link {
-      padding-bottom: 9px;
+      position: relative;
 
       &::before {
+        pointer-events: none;
         content: "";
         position: absolute;
         bottom: -10px;
@@ -94,8 +122,30 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
       &:hover::before {
         opacity: 1;
       }
+
+      &.active {
+        font-family: $font-secondary;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(100% + 7px);
+          height: 2px;
+          background-color: $bg-dark;
+          border-radius: 4px;
+          opacity: 1;
+        }
+
+        &:hover::before {
+          opacity: 1 !important;
+        }
+      }
     }
   }
+
   // ---LOGO-BOX-----------------
   &__logo {
     font-family: $font-secondary;
@@ -125,15 +175,73 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
   }
   // ---ICON-BOX-----------------
   &__icon {
-    width: clamp(1.25rem, 0.718rem + 1.11vw, 1.688rem);
     height: 30px;
+    width: 27px;
     fill: transparent;
-    cursor: pointer;
     stroke: $text-dark;
+
+    @media (max-width: 767px) {
+      &:not(:last-child) {
+        display: none;
+      }
+    }
+
+    @include media-min-width(sm) {
+      width: clamp(1.25rem, 0.718rem + 1.11vw, 1.688rem);
+    }
+    @include media-min-width(lg) {
+      cursor: pointer;
+    }
 
     &-box {
       @include flex-align-row;
       column-gap: clamp(1.25rem, -0.801rem + 4.27vw, 2.938rem);
+    }
+  }
+}
+
+// burger-menu---
+.burger-menu-btn {
+  background-color: transparent;
+  position: relative;
+  width: clamp(1.563rem, 0.966rem + 2.54vw, 2.188rem);
+  height: clamp(1rem, 0.523rem + 2.04vw, 1.5rem);
+
+  // &:hover {
+  //   & > span:nth-child(1) {
+  //     transform: rotate(35deg);
+  //   }
+  //   & > span:nth-child(2) {
+  //     transform: translateX(-500%);
+  //   }
+  //   & > span:nth-child(3) {
+  //     transform: rotate(-35deg);
+  //   }
+  // }
+
+  & > span {
+    transition: all 250ms linear;
+    position: absolute;
+    height: clamp(0.125rem, 0.065rem + 0.25vw, 0.188rem);
+    border-radius: 2px;
+    background-color: $text-dark;
+
+    &:nth-child(1) {
+      transform-origin: top left;
+      top: 0;
+      left: 0;
+      width: 70%;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+    &:nth-child(3) {
+      bottom: 0;
+      left: 0;
+      width: 70%;
     }
   }
 }

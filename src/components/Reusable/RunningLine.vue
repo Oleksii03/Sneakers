@@ -1,5 +1,5 @@
 <script setup>
-import BaseSvg from "../Base/BaseSvg.vue";
+import BaseSvg from "@components/Base/BaseSvg.vue";
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import MainStage from "@components/Pages/main/sections/MainStage.vue";
+import MainStage from "@components/Pages/main/sections/main-stage/MainStage.vue";
 </script>
 
 <template>

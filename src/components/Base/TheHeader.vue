@@ -17,7 +17,7 @@ const updateWidth = () => (windowWidth.value = innerWidth);
 
 onMounted(() => addEventListener("resize", updateWidth));
 
-onBeforeUnmount(() => removeEventListener("resize", updateWidth));
+// onBeforeUnmount(() => removeEventListener("resize", updateWidth));
 </script>
 
 <template>

@@ -1,8 +1,35 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import RunningLine from "@components/Reusable/RunningLine.vue";
+
+// ---refs----------------------
+
+const windowWidth = ref(innerWidth);
+const updateWidth = () => (windowWidth.value = innerWidth);
+onMounted(() => addEventListener("resize", updateWidth));
+onBeforeUnmount(() => removeEventListener("resize", updateWidth));
+</script>
 
 <template>
-  <section class="stage">
-    <div class="stage__content-top content-top">
+  <div class="stage__content-top_wrapper">
+    <!-- desk -->
+    <div v-if="windowWidth > 768" class="stage__content-top content-top-desk">
+      <div class="container">
+        <div class="content-top-desk__box">
+          <h2 class="content-top-desk__title">WE ARE NEVER DONE</h2>
+          <p class="content-top-desk__text">
+            Celebrating 50 years of Nike from May 16th! Exclusive products,
+            experiences and much more await you for five days. Scan and join the
+            Nike app!
+          </p>
+          <button type="button" class="content-top-desk__btn">
+            Celebrate with us
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- mob -->
+    <div v-else class="stage__content-top content-top">
       <div class="content-top__top">
         <picture>
           <source
@@ -18,9 +45,7 @@
           />
         </picture>
       </div>
-
       <!-- content-bottom -->
-
       <div class="content-top__bottom">
         <picture class="content-top__bottom-picture">
           <source
@@ -55,7 +80,9 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <RunningLine />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -63,6 +90,11 @@
 @use "@assets/style/utils/mixins.scss" as *;
 // --imports -------------
 
+// content-top-mob
+
+.stage__content-top_wrapper {
+  overflow: hidden;
+}
 .content-top {
   &__top {
     &-img {
@@ -109,7 +141,7 @@
         font-family: "Montserrat-Black";
         font-size: clamp(0.75rem, 0.154rem + 2.54vw, 1.375rem);
         line-height: clamp(0.938rem, -0.255rem + 5.09vw, 2.188rem);
-        max-width: clamp(18.063rem, -1.379rem + 82.95vw, 38.438rem);
+        max-width: clamp(18.063rem, -1.379rem + 78.95vw, 38.438rem);
       }
 
       &-btn {
@@ -123,6 +155,44 @@
         border-radius: 5px;
       }
     }
+  }
+}
+
+// content-top-desk
+.content-top-desk {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-image: url("@assets/image/pages/main/sections/main-stage/desk/top/bg.webp");
+  background-size: cover;
+  background-position: top center;
+
+  &__box {
+    color: $text-light;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  &__title {
+    font-family: $font-tertiary;
+    font-size: clamp(1.25rem, -0.273rem + 3.17vw, 2.5rem);
+    line-height: clamp(1.25rem, -0.959rem + 4.6vw, 3.063rem);
+  }
+
+  &__text {
+    max-width: clamp(15.938rem, -7.294rem + 48.34vw, 35rem);
+    font-family: "Montserrat-Black";
+    line-height: 1.5rem;
+    font-size: clamp(0.75rem, 0.141rem + 1.27vw, 1.25rem);
+  }
+
+  &__btn {
+    align-self: flex-start;
+    font-family: "Montserrat-SemiBold";
+    font-size: clamp(0.875rem, 0.723rem + 0.32vw, 1rem);
+    padding: 10px 28px;
+    line-height: 1.25rem;
+    border-radius: 16px;
   }
 }
 </style>

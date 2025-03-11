@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
 div {
   background-color: #b63a7cb1;
-  height: calc(100vh - 79px);
+  height: calc(100vh - 64px);
 }
 h1 {
   text-align: center;

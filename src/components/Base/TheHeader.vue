@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import BaseSvg from "./BaseSvg.vue";
+//----/-imports--------------------------------
 
 const navLinks = [
   { name: "WOMAN", path: "/woman" },

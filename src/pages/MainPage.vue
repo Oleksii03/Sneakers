@@ -1,6 +1,10 @@
-<script setup></script>
+<script setup>
+import MainStage from "@components/Pages/main/sections/MainStage.vue";
+</script>
 
-<template></template>
+<template>
+  <MainStage />
+</template>
 
 <style lang="scss">
 @use "@assets/style/utils/mixins.scss" as *;

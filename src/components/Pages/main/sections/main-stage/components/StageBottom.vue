@@ -67,9 +67,19 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
 // cards
 .cards {
   margin-top: -19px;
+
+  @include media-min-width(lg) {
+    margin-top: -32px;
+  }
+
   &__list {
     display: grid;
-    gap: clamp(3.375rem, 3.055rem + 1.37vw, 4.25rem);
+    gap: 50px;
+
+    @include media-min-width(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.438rem, -0.157rem + 3.32vw, 2.75rem);
+    }
   }
 
   &__item {
@@ -78,8 +88,16 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
     box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.25);
     background: $bg-gray;
     padding: 34px 130px 14px 43px;
-    width: 310px;
-    height: 136.22px;
+    height: clamp(8.5rem, 5.345rem + 13.46vw, 17.125rem);
+
+    @media (max-width: 376px) {
+      width: 310px;
+    }
+
+    @include media-min-width(md) {
+      padding: 62px 131px 24px 74px;
+      max-width: 610px;
+    }
 
     &-picture {
       position: absolute;
@@ -88,6 +106,29 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
       right: -56px;
       top: -49px;
       pointer-events: none;
+
+      @media (min-width: 376px) {
+        right: -45px;
+      }
+
+      @include media-min-width(sm) {
+        top: -10px;
+        width: clamp(17.063rem, -0.33rem + 36.23vw, 31.375rem);
+        height: clamp(14.313rem, 5.123rem + 19.15vw, 21.875rem);
+      }
+
+      @include media-min-width(md) {
+        // width: clamp(17.063rem, 11.826rem + 22.34vw, 31.375rem);
+        // height: clamp(14.313rem, 11.546rem + 11.8vw, 21.875rem);
+
+        top: -25px;
+        right: -60px;
+      }
+
+      @include media-min-width(lg) {
+        top: -46px;
+        right: -72px;
+      }
     }
 
     &-img {
@@ -106,18 +147,21 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
     &-title {
       color: $text-danger;
       font-family: $font-quaternary;
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0%;
+      font-size: clamp(1rem, 0.268rem + 3.12vw, 3rem);
+      line-height: clamp(1.25rem, 0.358rem + 3.8vw, 3.688rem);
       text-transform: uppercase;
     }
 
     &-description {
       font-family: "WorkSans-Regular";
-      font-size: 12px;
-      line-height: 15px;
-      letter-spacing: 1%;
+      font-size: clamp(0.75rem, 0.567rem + 0.78vw, 1.25rem);
+      line-height: clamp(0.938rem, 0.732rem + 0.88vw, 1.5rem);
       font-weight: 400;
+      letter-spacing: 0.5px;
+
+      @include media-min-width(sm) {
+        max-width: 229px;
+      }
     }
   }
 }

@@ -15,12 +15,13 @@ import BaseSvg from "@components/Base/BaseSvg.vue";
 
 .base-btn {
   border-radius: 35px;
-  width: 25px;
-  height: 25px;
+  width: clamp(1.563rem, 0.877rem + 2.93vw, 3.438rem);
+  height: clamp(1.563rem, 0.877rem + 2.93vw, 3.438rem);
+  background-color: $bg-light;
 
   &__icon {
-    width: 9.53px;
-    height: 7.17px;
+    width: clamp(0.625rem, 0.396rem + 0.98vw, 1.25rem);
+    height: clamp(0.438rem, 0.232rem + 0.88vw, 1rem);
     fill: $bg-dark;
   }
 }

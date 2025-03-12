@@ -13,7 +13,7 @@ onBeforeUnmount(() => removeEventListener("resize", updateWidth));
 <template>
   <div class="stage__content-top_wrapper">
     <!-- desk -->
-    <div v-if="windowWidth > 768" class="stage__content-top content-top-desk">
+    <div v-if="windowWidth >= 768" class="stage__content-top content-top-desk">
       <div class="container">
         <div class="content-top-desk__box">
           <h2 class="content-top-desk__title">WE ARE NEVER DONE</h2>

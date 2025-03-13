@@ -42,7 +42,11 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
               <p class="cards__item-title">{{ card.name }}</p>
               <h3 class="cards__item-description">{{ card.description }}</h3>
 
-              <UIArrowButton :bg="'rgb(255, 255, 255)'" :rotate="30" />
+              <UIArrowButton
+                class="cards__btn"
+                :bg="'rgb(255, 255, 255)'"
+                :rotate="30"
+              />
             </div>
           </li>
         </ul>
@@ -89,14 +93,21 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
     background: $bg-gray;
     padding: 34px 130px 14px 43px;
     height: clamp(8.5rem, 5.345rem + 13.46vw, 17.125rem);
+    cursor: pointer;
 
     @media (max-width: 376px) {
       width: 310px;
     }
 
     @include media-min-width(md) {
-      padding: 62px 131px 24px 74px;
+      padding: 62px 131px 27px 74px;
       max-width: 610px;
+    }
+
+    @include media-min-width(sm) {
+      &:hover > picture {
+        animation-play-state: paused;
+      }
     }
 
     &-picture {
@@ -106,6 +117,21 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
       right: -56px;
       top: -49px;
       pointer-events: none;
+      animation: float 2s ease-in-out infinite;
+      will-change: transform;
+      transition: transform 250ms linear;
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0); //
+        }
+      }
 
       @media (min-width: 376px) {
         right: -45px;
@@ -118,9 +144,6 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
       }
 
       @include media-min-width(md) {
-        // width: clamp(17.063rem, 11.826rem + 22.34vw, 31.375rem);
-        // height: clamp(14.313rem, 11.546rem + 11.8vw, 21.875rem);
-
         top: -25px;
         right: -60px;
       }
@@ -153,7 +176,7 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
     }
 
     &-description {
-      font-family: "WorkSans-Regular";
+      font-family: "WorkSans-Regular", sans-serif;
       font-size: clamp(0.75rem, 0.567rem + 0.78vw, 1.25rem);
       line-height: clamp(0.938rem, 0.732rem + 0.88vw, 1.5rem);
       font-weight: 400;
@@ -163,6 +186,10 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
         max-width: 229px;
       }
     }
+  }
+
+  &__btn {
+    margin-left: clamp(1.063rem, 0.857rem + 0.88vw, 1.625rem);
   }
 }
 </style>

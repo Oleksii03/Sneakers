@@ -1,10 +1,22 @@
 <script setup>
 import BaseSvg from "@components/Base/BaseSvg.vue";
+
+defineProps({
+  rotate: Number,
+  bg: {
+    type: String,
+    default: "transparent",
+  },
+});
 </script>
 
 <template>
-  <button class="base-btn">
-    <BaseSvg class="base-btn__icon" id="icon-arrow-small" />
+  <button class="base-btn" :style="{ backgroundColor: bg }">
+    <BaseSvg
+      class="base-btn__icon"
+      id="icon-arrow-small"
+      :style="{ transform: `rotate(-${rotate}deg)` }"
+    />
   </button>
 </template>
 
@@ -17,7 +29,7 @@ import BaseSvg from "@components/Base/BaseSvg.vue";
   border-radius: 35px;
   width: clamp(1.563rem, 0.877rem + 2.93vw, 3.438rem);
   height: clamp(1.563rem, 0.877rem + 2.93vw, 3.438rem);
-  background-color: $bg-light;
+  background-color: $basic-white;
 
   &__icon {
     width: clamp(0.625rem, 0.396rem + 0.98vw, 1.25rem);

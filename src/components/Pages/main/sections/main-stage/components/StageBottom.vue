@@ -42,7 +42,7 @@ import UIArrowButton from "../../../../../UI/UIArrowButton.vue";
               <p class="cards__item-title">{{ card.name }}</p>
               <h3 class="cards__item-description">{{ card.description }}</h3>
 
-              <UIArrowButton />
+              <UIArrowButton :bg="'rgb(255, 255, 255)'" :rotate="30" />
             </div>
           </li>
         </ul>

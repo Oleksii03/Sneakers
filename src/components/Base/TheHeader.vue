@@ -1,21 +1,21 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref } from "vue";
 import BaseSvg from "./BaseSvg.vue";
 //----/-imports--------------------------------
 
-const navLinks = [
-  { name: "WOMAN", path: "/woman" },
-  { name: "MEN", path: "/men" },
-  { name: "ALL", path: "/" },
-];
+// const navLinks = [
+//   { name: "WOMAN", path: "/woman" },
+//   { name: "MEN", path: "/men" },
+//   { name: "ALL", path: "/" },
+// ];
 
-const headerIcons = ["icon-user", "icon-search", "icon-basket"];
+// const headerIcons = ["icon-user", "icon-search", "icon-basket"];
 
-const windowWidth = ref(innerWidth);
+// const windowWidth = ref(innerWidth);
 
-const updateWidth = () => (windowWidth.value = innerWidth);
+// const updateWidth = () => (windowWidth.value = innerWidth);
 
-onMounted(() => addEventListener("resize", updateWidth));
+// onMounted(() => addEventListener("resize", updateWidth));
 
 // onBeforeUnmount(() => removeEventListener("resize", updateWidth));
 </script>

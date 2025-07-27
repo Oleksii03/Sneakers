@@ -1,6 +1,10 @@
-<script setup></script>
+<script setup>
+import Stage from "@components/Pages/main/sections/main-stage/Stage.vue";
+</script>
 
-<template></template>
+<template>
+  <Stage />
+</template>
 
 <style lang="scss">
 @use "@assets/style/utils/mixins.scss" as *;

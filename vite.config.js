@@ -5,15 +5,7 @@ import path from "path";
 
 export default defineConfig({
   base: "/Sneakers",
-  plugins: [
-    vue(),
-    // Components({
-    //   dirs: ["src/components", "src/pages", "src/layout/"], // Додаємо папку 'src/pages' для пошуку компонентів
-    //   deep: true, // Шукати вкладені компоненти
-    //   extensions: ["vue"], // Розширення файлів компонентів
-    //   dts: "src/components.d.ts",
-    // }),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -28,9 +20,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
-        // about: path.resolve(__dirname, "./src/about.html"),
-        // contact: path.resolve(__dirname, "./src/contact.html"),
-        // Додайте більше сторінок, як потрібно
       },
       output: {
         manualChunks(id) {

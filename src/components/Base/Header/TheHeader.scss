@@ -1,50 +1,5 @@
-<script setup>
-import BaseSvg from "./BaseSvg.vue";
-
-const pages = ["WOMAN", "MEN", "ALL"];
-const headerIcons = ["icon-user", "icon-search", "icon-basket"];
-</script>
-
-<template>
-  <section class="header">
-    <div class="header__container container">
-      <div class="header__content">
-        <button class="header__burger-menu-btn">
-          <span v-for="i of 3" :key="i"></span>
-        </button>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li
-              v-for="(page, i) of pages"
-              :key="page + i"
-              class="header__nav-item"
-            >
-              {{ page }}
-            </li>
-          </ul>
-        </nav>
-
-        <div class="header__logo-box">
-          <a href="#" class="header__logo"><span>your</span>SNEAKER</a>
-        </div>
-
-        <div class="header__icon-box">
-          <BaseSvg
-            class="header__icon"
-            v-for="(icon, idx) of headerIcons"
-            :key="idx"
-            :id="icon"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
-<style lang="scss" scoped>
 @use "@assets/style/utils/variables.scss" as *;
 @use "@assets/style/utils/mixins.scss" as *;
-// ----------imports----------------------
 
 .header {
   padding: 17px 0px;
@@ -81,49 +36,28 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
       cursor: pointer;
     }
 
-    // &-link {
-    //   position: relative;
+    &-link {
+      position: relative;
 
-    //   &::before {
-    //     pointer-events: none;
-    //     content: "";
-    //     position: absolute;
-    //     bottom: -10px;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     width: calc(100% + 7px);
-    //     height: 2px;
-    //     background-color: $bg-dark;
-    //     border-radius: 4px;
-    //     opacity: 0;
-    //     transition: opacity 200ms linear;
-    //   }
+      &::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 7px);
+        height: 2px;
+        background-color: $bg-dark;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 200ms linear;
+      }
 
-    //   &:hover::before {
-    //     opacity: 1;
-    //   }
-
-    //   &.active {
-    //     font-family: $font-secondary;
-
-    //     &::before {
-    //       content: "";
-    //       position: absolute;
-    //       bottom: -10px;
-    //       left: 50%;
-    //       transform: translateX(-50%);
-    //       width: calc(100% + 7px);
-    //       height: 2px;
-    //       background-color: $bg-dark;
-    //       border-radius: 4px;
-    //       opacity: 1;
-    //     }
-
-    //     &:hover::before {
-    //       opacity: 1 !important;
-    //     }
-    //   }
-    // }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
   }
 
   // ---LOGO-BOX-----------------
@@ -217,4 +151,24 @@ const headerIcons = ["icon-user", "icon-search", "icon-basket"];
     }
   }
 }
-</style>
+
+.router-link-active {
+  font-family: $font-secondary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 7px);
+    height: 2px;
+    background-color: $bg-dark;
+    border-radius: 4px;
+    opacity: 1;
+  }
+
+  &:hover::before {
+    opacity: 1 !important;
+  }
+}

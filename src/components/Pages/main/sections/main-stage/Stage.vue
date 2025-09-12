@@ -1,6 +1,6 @@
 <script setup>
-import StageTop from "./components/StageTop.vue";
-import StageBottom from "./components/StageBottom.vue";
+import StageTop from "@components/Pages/main/sections/main-stage/components/StageTop/StageTop.vue";
+import StageBottom from "@components/Pages/main/sections/main-stage/components/StageBottom/StageBottom.vue";
 </script>
 
 <template>
@@ -9,8 +9,3 @@ import StageBottom from "./components/StageBottom.vue";
     <StageBottom />
   </section>
 </template>
-
-<style lang="scss" scoped>
-.main-stage {
-}
-</style>

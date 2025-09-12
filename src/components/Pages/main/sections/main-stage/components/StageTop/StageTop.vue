@@ -1,5 +1,5 @@
 <script setup>
-import BaseButton from "../../../../../UI/BaseButton.vue";
+import BaseButton from "@components/UI/BaseButton.vue";
 </script>
 
 <template>
@@ -44,28 +44,5 @@ import BaseButton from "../../../../../UI/BaseButton.vue";
 </template>
 
 <style lang="scss" scoped>
-@use "@assets/style/utils/variables.scss" as *;
-.background-top {
-  position: relative;
-
-  &__img {
-    height: 100%;
-    width: 100%;
-
-    object-fit: cover;
-
-    @media (min-width: 569px) {
-      min-height: 200px;
-      object-position: 30% top;
-    }
-  }
-
-  &__container {
-    color: $text-light;
-
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-  }
-}
+@use "./StageTop.scss";
 </style>

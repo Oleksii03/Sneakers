@@ -9,3 +9,9 @@ import StageBottom from "@components/Pages/main/sections/main-stage/components/S
     <StageBottom />
   </section>
 </template>
+
+<style leng="scss" scoped>
+.main-stage {
+  padding-top: 64px;
+}
+</style>

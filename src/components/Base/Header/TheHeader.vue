@@ -1,5 +1,8 @@
 <script setup>
+import { ref, Teleport } from "vue";
 import BaseSvg from "@components/Base/BaseSvg.vue";
+import Backdrop from "@components/Base/Backdrop/Backdrop.vue";
+import MobMenuBtn from "./components/MobMenuBtn.vue";
 
 const headerIcons = ["icon-user", "icon-basket"];
 const pages = [
@@ -13,15 +16,24 @@ const pages = [
     name: "HOME",
   },
 ];
+
+const activeMobMenu = ref(false);
+
+function setActiveMobMenu() {
+  activeMobMenu.value = !activeMobMenu.value;
+}
 </script>
 
 <template>
+  <Teleport to="#backdrop">
+    <Backdrop :activeMobMenu="activeMobMenu" @close="setActiveMobMenu" />
+  </Teleport>
+
   <section class="header">
     <div class="header__container container">
       <div class="header__content">
-        <button class="header__burger-menu-btn">
-          <span v-for="i of 3" :key="i"></span>
-        </button>
+        <MobMenuBtn v-model:activeMobMenu="activeMobMenu" />
+
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li
@@ -53,6 +65,4 @@ const pages = [
   </section>
 </template>
 
-<style lang="scss" scoped>
-@use "./TheHeader.scss";
-</style>
+<style lang="scss" scoped src="./TheHeader.scss"></style>

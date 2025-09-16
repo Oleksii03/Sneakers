@@ -1,20 +1,19 @@
 <script setup>
-const model = defineModel("activeMobMenu", { type: Boolean });
+defineProps({
+  activeMobMenu: {
+    type: Boolean,
+  },
+});
 
-function toggleMobMenu() {
-  model.value = !model.value;
-
-  document.body.style.overflow = model.value ? "" : "hidden";
-}
+const emit = defineEmits(["toggle"]);
 </script>
 
 <template>
   <button
-    class="burger-menu-btn"
-    :class="{ active: model }"
-    @click="toggleMobMenu"
+    :class="['burger-menu-btn', { active: activeMobMenu }]"
+    @click="$emit('toggle')"
   >
-    <span class="" v-for="i of 3" :key="i"></span>
+    <span v-for="i of 3" :key="i"></span>
   </button>
 </template>
 

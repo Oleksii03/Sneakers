@@ -21,6 +21,7 @@ const activeMobMenu = ref(false);
 
 function setActiveMobMenu() {
   activeMobMenu.value = !activeMobMenu.value;
+  document.body.style.overflow = activeMobMenu.value ? "hidden" : "";
 }
 </script>
 
@@ -32,7 +33,7 @@ function setActiveMobMenu() {
   <section class="header">
     <div class="header__container container">
       <div class="header__content">
-        <MobMenuBtn v-model:activeMobMenu="activeMobMenu" />
+        <MobMenuBtn @toggle="setActiveMobMenu" :activeMobMenu="activeMobMenu" />
 
         <nav class="header__nav">
           <ul class="header__nav-list">

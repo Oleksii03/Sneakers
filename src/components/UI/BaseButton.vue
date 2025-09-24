@@ -14,14 +14,13 @@ defineProps({
 
 <template>
   <button class="button" :type="type">
-    <span class="button__inner">
-      {{ label }}
-    </span>
+    <span class="button__inner">{{ label }}</span>
   </button>
 </template>
 
 <style lang="scss" scoped>
 @use "@assets/style/utils/variables.scss" as *;
+
 .button {
   border: none;
   cursor: pointer;

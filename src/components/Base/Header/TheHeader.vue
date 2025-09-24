@@ -1,28 +1,36 @@
 <script setup>
-import { ref, Teleport } from "vue";
+import { onMounted, onUnmounted, ref, Teleport, watch } from "vue";
 import BaseSvg from "@components/Base/BaseSvg.vue";
 import Backdrop from "@components/Base/Backdrop/Backdrop.vue";
 import MobMenuBtn from "./components/MobMenuBtn.vue";
 
 const headerIcons = ["icon-user", "icon-basket"];
 const pages = [
-  {
-    path: "/Catalog",
-    name: "CATALOG",
-  },
-
-  {
-    path: "/Sneakers",
-    name: "HOME",
-  },
+  { path: "/Catalog", name: "CATALOG" },
+  { path: "/Sneakers", name: "HOME" },
 ];
 
 const activeMobMenu = ref(false);
 
 function setActiveMobMenu() {
   activeMobMenu.value = !activeMobMenu.value;
-  document.body.style.overflow = activeMobMenu.value ? "hidden" : "";
 }
+
+function handleResize() {
+  if (window.innerWidth < 768) return;
+  activeMobMenu.value = false;
+  document.body.style.overflow = "";
+}
+
+watch(activeMobMenu, (isActive) => {
+  document.body.style.overflow = isActive ? "hidden" : "";
+});
+
+onMounted(() => window.addEventListener("resize", handleResize));
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+  document.body.style.overflow = "";
+});
 </script>
 
 <template>

@@ -24,8 +24,8 @@ const emit = defineEmits(["toggle"]);
 .burger-menu-btn {
   background-color: transparent;
   position: relative;
-  width: clamp(1.563rem, 0.966rem + 2.54vw, 2.188rem);
-  height: clamp(1rem, 0.523rem + 2.04vw, 1.5rem);
+  width: 28px;
+  height: 18px;
   display: block;
 
   @media (min-width: 768px) {
@@ -35,7 +35,7 @@ const emit = defineEmits(["toggle"]);
   & > span {
     transition: all 200ms linear;
     position: absolute;
-    height: clamp(0.125rem, 0.065rem + 0.25vw, 0.188rem);
+    height: 2px;
     border-radius: 2px;
     background-color: $text-dark;
     transform-origin: left;

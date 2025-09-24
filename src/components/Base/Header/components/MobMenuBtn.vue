@@ -2,6 +2,7 @@
 defineProps({
   activeMobMenu: {
     type: Boolean,
+    required: true,
   },
 });
 

@@ -3,6 +3,7 @@ import { onMounted, onUnmounted, ref, Teleport, watch } from "vue";
 import BaseSvg from "@components/Base/BaseSvg.vue";
 import Backdrop from "@components/Base/Backdrop/Backdrop.vue";
 import MobMenuBtn from "./components/MobMenuBtn.vue";
+import MobMenu from "@components/Base/MobMenu/MobMenu.vue";
 
 const headerIcons = ["icon-user", "icon-basket"];
 const pages = [
@@ -35,13 +36,19 @@ onUnmounted(() => {
 
 <template>
   <Teleport to="#backdrop">
-    <Backdrop :activeMobMenu="activeMobMenu" @close="setActiveMobMenu" />
+    <Backdrop :active-mob-menu="activeMobMenu" @close="setActiveMobMenu" />
+    <MobMenu :active-mob-menu="activeMobMenu" />
   </Teleport>
+
+  <Teleport to="body"> </Teleport>
 
   <section class="header">
     <div class="header__container container">
       <div class="header__content">
-        <MobMenuBtn @toggle="setActiveMobMenu" :activeMobMenu="activeMobMenu" />
+        <MobMenuBtn
+          @toggle="setActiveMobMenu"
+          :active-mob-menu="activeMobMenu"
+        />
 
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -58,7 +65,9 @@ onUnmounted(() => {
         </nav>
 
         <div class="header__logo-box">
-          <a href="#" class="header__logo"><span>your</span>SNEAKER</a>
+          <RouterLink to="/Sneakers" class="header__logo">
+            <span>your</span>SNEAKER
+          </RouterLink>
         </div>
 
         <div class="header__icon-box">

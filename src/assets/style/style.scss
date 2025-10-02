@@ -2,3 +2,12 @@
 @use "./utils/mixins.scss";
 @use "./fonts/fonts.scss";
 @use "./base/common.scss";
+// Utility class for pages with fixed header
+.page-with-header {
+  padding-top: 150px !important;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding-top: 120px !important;
+  }
+}

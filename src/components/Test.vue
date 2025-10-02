@@ -54,10 +54,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import CartIcon from "./Base/Header/components/CartIcon.vue";
+import { useCart } from "@/composables/useCart.js";
 
-const itemCount = ref(5);
+const { itemCount } = useCart();
 </script>
 
 <style lang="scss" scoped>

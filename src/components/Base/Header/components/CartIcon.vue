@@ -55,13 +55,12 @@ function goToCart() {
   border-radius: 8px;
 
   // Забираємо padding, щоб іконка була того ж розміру що й інші
-  &:hover {
-    transform: scale(1.05);
-    background-color: rgba(0, 0, 0, 0.05);
+  &:focus {
+    outline: none;
   }
 
-  &:focus {
-    outline: 2px solid #007bff;
+  &:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.3);
     outline-offset: 2px;
   }
 

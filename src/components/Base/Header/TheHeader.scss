@@ -110,8 +110,18 @@
     @include media-min-width(sm) {
       width: clamp(1.25rem, 0.718rem + 1.11vw, 1.688rem);
     }
+
     @include media-min-width(lg) {
       cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(0, 0, 0, 0.3);
+      outline-offset: 2px;
     }
 
     &-box {

@@ -27,9 +27,20 @@ const emit = defineEmits(["toggle"]);
   width: 28px;
   height: 18px;
   display: block;
+  border: none;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 2px;
   }
 
   & > span {

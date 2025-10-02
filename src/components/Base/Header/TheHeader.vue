@@ -5,6 +5,7 @@ import Backdrop from "@components/Base/Backdrop/Backdrop.vue";
 import MobMenuBtn from "./components/MobMenuBtn.vue";
 import MobMenu from "@components/Base/MobMenu/MobMenu.vue";
 import CartIcon from "./components/CartIcon.vue";
+import { useCart } from "@/composables/useCart.js";
 
 const pages = [
   { path: "/Catalog", name: "CATALOG" },
@@ -13,7 +14,9 @@ const pages = [
 ];
 
 const activeMobMenu = ref(false);
-const cartItemCount = ref(3); // Демо значення
+
+// Використовуємо глобальний стан корзини
+const { itemCount: cartItemCount } = useCart();
 
 function setActiveMobMenu() {
   activeMobMenu.value = !activeMobMenu.value;
@@ -73,7 +76,13 @@ onUnmounted(() => {
         </div>
 
         <div class="header__icon-box">
-          <BaseSvg class="header__icon" id="icon-user" />
+          <BaseSvg
+            class="header__icon"
+            id="icon-user"
+            tabindex="0"
+            role="button"
+            aria-label="Профіль користувача"
+          />
           <CartIcon class="header__icon" :item-count="cartItemCount" />
         </div>
       </div>

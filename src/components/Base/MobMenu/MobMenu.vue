@@ -4,6 +4,8 @@ import { RouterLink } from "vue-router";
 defineProps({
   activeMobMenu: Boolean,
 });
+
+defineEmits(["close"]);
 </script>
 
 <template>
@@ -12,13 +14,30 @@ defineProps({
       <div class="mob-menu__content">
         <ul>
           <li class="mob-menu__item">
-            <RouterLink to="/Sneakers" class="mob-menu__link">
+            <RouterLink
+              to="/Sneakers"
+              class="mob-menu__link"
+              @click="$emit('close')"
+            >
               HOME
             </RouterLink>
           </li>
           <li class="mob-menu__item">
-            <RouterLink to="/Catalog" class="mob-menu__link">
+            <RouterLink
+              to="/Catalog"
+              class="mob-menu__link"
+              @click="$emit('close')"
+            >
               CATALOG
+            </RouterLink>
+          </li>
+          <li class="mob-menu__item">
+            <RouterLink
+              to="/Cart"
+              class="mob-menu__link"
+              @click="$emit('close')"
+            >
+              CART
             </RouterLink>
           </li>
         </ul>

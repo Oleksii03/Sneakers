@@ -4,14 +4,19 @@ import BaseSvg from "@components/Base/BaseSvg.vue";
 import Backdrop from "@components/Base/Backdrop/Backdrop.vue";
 import MobMenuBtn from "./components/MobMenuBtn.vue";
 import MobMenu from "@components/Base/MobMenu/MobMenu.vue";
+import CartIcon from "./components/CartIcon.vue";
+import { useCart } from "@/composables/useCart.js";
 
-const headerIcons = ["icon-user", "icon-basket"];
 const pages = [
   { path: "/Catalog", name: "CATALOG" },
   { path: "/Sneakers", name: "HOME" },
+  { path: "/Cart", name: "CART" },
 ];
 
 const activeMobMenu = ref(false);
+
+// Використовуємо глобальний стан корзини
+const { itemCount: cartItemCount } = useCart();
 
 function setActiveMobMenu() {
   activeMobMenu.value = !activeMobMenu.value;
@@ -37,7 +42,7 @@ onUnmounted(() => {
 <template>
   <Teleport to="#backdrop">
     <Backdrop :active-mob-menu="activeMobMenu" @close="setActiveMobMenu" />
-    <MobMenu :active-mob-menu="activeMobMenu" />
+    <MobMenu :active-mob-menu="activeMobMenu" @close="setActiveMobMenu" />
   </Teleport>
 
   <section class="header">
@@ -71,10 +76,12 @@ onUnmounted(() => {
         <div class="header__icon-box">
           <BaseSvg
             class="header__icon"
-            v-for="(icon, idx) of headerIcons"
-            :key="idx"
-            :id="icon"
+            id="icon-user"
+            tabindex="0"
+            role="button"
+            aria-label="Профіль користувача"
           />
+          <CartIcon class="header__icon" :item-count="cartItemCount" />
         </div>
       </div>
     </div>

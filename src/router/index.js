@@ -16,10 +16,16 @@ const routes = [
     name: "Catalog",
     component: Catalog,
   },
+
+  {
+    path: "/Cart",
+    name: "Cart",
+    component: () => import("@pages/Cart.vue"),
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/Sneakers"),
   routes,
 });
 

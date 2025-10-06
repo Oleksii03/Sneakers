@@ -86,7 +86,7 @@
     </symbol>
 
     <symbol id="icon-home" viewBox="0 0 32 32">
-      <path 
+      <path
         stroke-linejoin="round"
         stroke-linecap="round"
         stroke-width="2"
@@ -95,7 +95,7 @@
     </symbol>
 
     <symbol id="icon-catalog" viewBox="0 0 32 32">
-      <path 
+      <path
         stroke-linejoin="round"
         stroke-linecap="round"
         stroke-width="2"

@@ -40,8 +40,6 @@ onUnmounted(() => {
     <MobMenu :active-mob-menu="activeMobMenu" />
   </Teleport>
 
-  <Teleport to="body"> </Teleport>
-
   <section class="header">
     <div class="header__container container">
       <div class="header__content">

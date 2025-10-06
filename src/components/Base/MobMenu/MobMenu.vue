@@ -62,7 +62,9 @@ defineProps({
   &__link {
     color: $text-dark;
     font-size: 24px;
-    transition: color 200ms linear, background-color 200ms linear;
+    transition:
+      color 200ms linear,
+      background-color 200ms linear;
   }
 
   &.active {

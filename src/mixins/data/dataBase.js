@@ -5,11 +5,11 @@ const cardsMainStage = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/main-stage/sneakers/nike-air-max-270.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/main-stage/sneakers/nike-air-max-270.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "new",
@@ -20,11 +20,11 @@ const cardsMainStage = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/main-stage/sneakers/red-shoe.webp",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/main-stage/sneakers/red-shoe.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "new",
@@ -40,11 +40,11 @@ const cardsTopSneakers = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/air-max-97.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/air-max-97.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "Air Max 97",
@@ -55,11 +55,11 @@ const cardsTopSneakers = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/react-presto.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/react-presto.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "React Presto",
@@ -70,11 +70,11 @@ const cardsTopSneakers = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/KD13-EP.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/summertime-mood/top-sneakers/KD13-EP.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "KD13 EP",
@@ -90,11 +90,11 @@ const cardsDiscountSneakers = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/looks-runs-feels/discount-sneakers/nike-gray-sneakers.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/looks-runs-feels/discount-sneakers/nike-gray-sneakers.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "Discount",
@@ -106,11 +106,11 @@ const cardsDiscountSneakers = [
     img: {
       png: new URL(
         "@assets/image/pages/main/sections/looks-runs-feels/discount-sneakers/nike-green-sneakers.png",
-        import.meta.url
+        import.meta.url,
       ),
       webp: new URL(
         "@assets/image/pages/main/sections/looks-runs-feels/discount-sneakers/nike-green-sneakers.webp",
-        import.meta.url
+        import.meta.url,
       ),
     },
     name: "Discount",
